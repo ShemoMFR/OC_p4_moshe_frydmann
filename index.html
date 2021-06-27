@@ -57,66 +57,66 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
+              id='form-container'
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
                 class="formData">
-                <label>Prénom</label><br>
+                <label>*Prénom</label><br>
                 <input
-                  class="text-control"
+                  class="text-control check-input"
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
+                  minlength="2" required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>Nom</label><br>
+                <label>*Nom</label><br>
                 <input
-                  class="text-control"
+                  class="text-control check-input"
                   type="text"
                   id="last"
-                  name="last"
+                  name="last" required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>E-mail</label><br>
+                <label>*E-mail</label><br>
                 <input
-                  class="text-control"
+                  class="text-control check-input"
                   type="email"
                   id="email"
-                  name="email"
+                  name="email" required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>Date de naissance</label><br>
+                <label>*Date de naissance</label><br>
                 <input
-                  class="text-control"
+                  class="text-control check-input"
                   type="date"
                   id="birthdate"
-                  name="birthdate"
+                  name="birthdate" required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <label>*À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" class="text-control check-input" id="quantity" name="quantity" min="0" max="99" required>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
-                class="formData">
+                class="formData check-input" required>
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location1"
                   name="location"
-                  value="New York"
+                  value="New York" required
                 />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
@@ -199,12 +199,13 @@
                 </label>
                 <br>
               </div>
-              <input
+              <button
+                id="submit-btn"
                 class="btn-submit"
                 type="submit"
                 class="button"
                 value="C'est parti"
-              />
+              > C'est parti </button>
             </form>
           </div>
         </div>
@@ -215,6 +216,6 @@
         Copyright 2014 - 2020, GameOn Inc.
       </p>
     </footer>
-    <script src="modal.js"></script>
+    <script src="./modal.js"></script>
   </body>
 </html>
