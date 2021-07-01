@@ -14,7 +14,6 @@ function editNav() {
   const submit = document.getElementById("form-container");
   const inputs = document.querySelectorAll(".text-control");
   const errorsMessages = document.querySelectorAll(".error-msg")
-  let count = 0;
   const arrayErrorsMessages = [
     "Vous devez entrer au moins 2 caractères", 
     "Vous devez entrer au moins 2 caractères",
@@ -25,9 +24,19 @@ function editNav() {
     "Veuillez accepter les conditions générales"
   ];
 
+  function handleInputchange(e, i) {
+
+    let lastChild = formData[i].lastChild;
+
+    if (e.target.value && lastChild.className == "error-msg") {
+      lastChild.remove();
+    }
+  }
+
   submit.addEventListener('submit', (e) => {
 
     e.preventDefault();
+    let count = 0;
 
     for (let i = 0; i < 5; i++) {
 
@@ -43,7 +52,7 @@ function editNav() {
           break;
         }
 
-        if (lastChild.className == "error-msg") {
+        else if (lastChild.className == "error-msg") {
           break;
         }
 
@@ -51,13 +60,20 @@ function editNav() {
           newDiv.textContent = arrayErrorsMessages[i];
           formData[i].appendChild(newDiv);
         }
-        
     }
 
-    if (count == 6) {
+    if (count == 5) {
       alert("Merci ! Votre réservation a été reçue.");
     }
+
+    console.log(count);
   });
+
+  for (let i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener("change", (e) => {handleInputchange(e, i)})
+  };
+
+  
   
   // launch modal event
   modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
