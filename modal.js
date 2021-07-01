@@ -14,6 +14,7 @@ function editNav() {
   const submit = document.getElementById("form-container");
   const inputs = document.querySelectorAll(".text-control");
   const errorsMessages = document.querySelectorAll(".error-msg")
+  const checkBox1 = document.getElementById('checkbox1');
   const arrayErrorsMessages = [
     "Vous devez entrer au moins 2 caractères", 
     "Vous devez entrer au moins 2 caractères",
@@ -62,16 +63,37 @@ function editNav() {
         }
     }
 
-    if (count == 5) {
-      alert("Merci ! Votre réservation a été reçue.");
+    if (checkBox1.checked == true) {
+      count++;
+    }
+    else {
+      const newDiv = document.createElement('div');
+      newDiv.className = "error-msg";
+      let lastChild = formData[6].lastChild;
+
+      if (lastChild.className != "error-msg") {
+        newDiv.textContent = arrayErrorsMessages[6];
+        formData[6].appendChild(newDiv);
+      }
+
     }
 
-    console.log(count);
+    if (count == 7) {
+      alert("Merci ! Votre réservation a été reçue.");
+    }
   });
 
   for (let i = 0; i < inputs.length; i++) {
       inputs[i].addEventListener("change", (e) => {handleInputchange(e, i)})
   };
+
+  checkBox1.addEventListener("change", (e) => {
+    let lastChild = formData[6].lastChild;
+
+    if (e.target.value && lastChild.className == "error-msg") {
+      lastChild.remove();
+    }
+  });
 
   
   
