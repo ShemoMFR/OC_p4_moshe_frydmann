@@ -16,7 +16,7 @@ const inputs = document.querySelectorAll(".text-control");
 const errorsMessages = document.querySelectorAll(".error-msg")
 const locationCheck = document.querySelectorAll(".location-check");
 const checkBox1 = document.getElementById('checkbox1');
-const close = document.getElementsByClassName("close");
+const close = document.getElementById("closeModal");
 const arrayErrorsMessages = [
   "Vous devez entrer au moins 2 caractères", 
   "Vous devez entrer au moins 2 caractères",
@@ -26,6 +26,7 @@ const arrayErrorsMessages = [
   "Veuillez Indiquer la ville",
   "Veuillez accepter les conditions générales"
 ];
+
 
 function handleInputchange(e, i) {
 
@@ -112,4 +113,5 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-close.addEventListener("click", closeModal);
+close.addEventListener('click', closeModal);
+
