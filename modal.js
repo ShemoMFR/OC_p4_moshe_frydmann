@@ -35,7 +35,7 @@ function handleInputchange(e, i) {
   if (e.target.value.length > 1 && lastChild.className == "error-msg") {
     lastChild.remove();
   }
-}
+};
 
 submit.addEventListener('submit', (e) => {
 
@@ -84,6 +84,10 @@ submit.addEventListener('submit', (e) => {
 
   if (count == inputs.length + 1) {
     alert("Merci ! Votre réservation a été reçue.");
+  }
+
+  else {
+    e.preventDefault();
   }
 
 });
