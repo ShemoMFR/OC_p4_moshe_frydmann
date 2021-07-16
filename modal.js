@@ -35,6 +35,9 @@ function handleInputchange(e, i) {
   if (e.target.value.length > 1 && lastChild.className == "error-msg") {
     lastChild.remove();
   }
+  else if(i == 4 && e.target.value && lastChild.className == "error-msg") {
+    lastChild.remove();
+  }
 };
 
 submit.addEventListener('submit', (e) => {
