@@ -11,6 +11,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const content = document.getElementById("content");
+const form = document.getElementById("form-container");
 const formData = document.querySelectorAll(".formData");
 const submit = document.getElementById("form-container");
 const inputs = document.querySelectorAll(".text-control");
@@ -31,20 +32,22 @@ const arrayErrorsMessages = [
 
 function deleteInputs() {
 
-  for (let i = 0; i < formData.length; i++) {
-    formData[i].style.display = "none";
-  }
+  form.style.display = "none";
 
   submitBtn.textContent = "Fermer"
   submitBtn.style.marginTop = "250px";
   const newDiv = document.createElement('div');
   newDiv.className = "msgSubmit";
   newDiv.textContent = "Merci d'avoir envoyé vos informations d'enregistrement";
-  content.style.height = "400px";
+  content.style.height = "800px";
   content.appendChild(newDiv);
 
-  submitBtn.addEventListener("click", closeModal);
+  close.addEventListener("click", function() {
 
+    form.style.display = "";
+    content.lastChild.remove();
+
+  });
 
 };
 
@@ -109,7 +112,6 @@ submit.addEventListener('submit', (e) => {
   if (count == inputs.length + 1) {
     //alert("Merci ! Votre réservation a été reçue.");
     e.preventDefault();
-
     deleteInputs();
   }
 
