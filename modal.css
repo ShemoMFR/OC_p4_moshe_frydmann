@@ -236,6 +236,13 @@
     color: white; 
   }
 
+  .msgSubmit {
+    top: 10%;
+    color: white;
+    position: absolute;
+    margin: 40px;
+  }
+
   .check-conditions {
     margin-top: 20px;
   }
