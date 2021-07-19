@@ -459,10 +459,12 @@
     position: relative;
     z-index: 1;
   }
+
   .hero-headline {
     font-size: 6rem;
     font-weight: normal;
     white-space: nowrap;
+
   }
   .hero-text {
     width: 100%;
@@ -503,6 +505,14 @@
     margin: 0 20px;
   }
 
+  @media screen and (max-width: 980px) {
+      .hero-headline {
+      font-size: 4.5rem;
+      overflow-wrap: break-word;
+    }
+  }
+
+
   @media screen and (max-width: 800px) {
     .hero-section {
       display: block;
@@ -522,6 +532,7 @@
     .hero-headline {
       font-size: 4.5rem;
       white-space: normal;
+      overflow-wrap: break-word;
     }
     .hero-text {
       width: unset;
