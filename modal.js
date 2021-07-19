@@ -32,22 +32,23 @@ const arrayErrorsMessages = [
 
 function deleteInputs() {
 
-  form.style.display = "none";
+  for (let i = 0; i < formData.length; i++) {
+    formData[i].style.display = "none";
+  }
 
   submitBtn.textContent = "Fermer"
-  submitBtn.style.marginTop = "250px";
+  submitBtn.style.marginTop = "300px";
   const newDiv = document.createElement('div');
   newDiv.className = "msgSubmit";
   newDiv.textContent = "Merci d'avoir envoyé vos informations d'enregistrement";
-  content.style.height = "800px";
   content.appendChild(newDiv);
 
-  close.addEventListener("click", function() {
+  submitBtn.addEventListener("click", function() {
 
-    form.style.display = "";
-    content.lastChild.remove();
+   
+     window.location.reload(true);
 
-  });
+   });
 
 };
 
@@ -110,7 +111,6 @@ submit.addEventListener('submit', (e) => {
   }
 
   if (count == inputs.length + 1) {
-    //alert("Merci ! Votre réservation a été reçue.");
     e.preventDefault();
     deleteInputs();
   }
