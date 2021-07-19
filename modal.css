@@ -444,7 +444,7 @@
     color: #fff;
     position: relative;
     text-align: left;
-    min-width: 424px;
+    min-width: 24px;
   }
   .hero-content::after {
     content: "";
@@ -465,7 +465,7 @@
     white-space: nowrap;
   }
   .hero-text {
-    width: 146%;
+    width: 100%;
     font-weight: normal;
     margin-top: 57px;
     padding: 0;
@@ -502,6 +502,7 @@
     padding-right: 2vw;
     margin: 0 20px;
   }
+
   @media screen and (max-width: 800px) {
     .hero-section {
       display: block;
@@ -540,6 +541,14 @@
       text-align: center;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .hero-headline {
+      font-size: 3rem;
+      overflow-wrap: break-word;
+    }    
+  }
+
   
   @keyframes modalopen {
     from {

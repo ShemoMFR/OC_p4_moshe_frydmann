@@ -37,7 +37,7 @@ function deleteInputs() {
   }
 
   submitBtn.textContent = "Fermer"
-  submitBtn.style.marginTop = "300px";
+  submitBtn.style.marginTop = "400px";
   const newDiv = document.createElement('div');
   newDiv.className = "msgSubmit";
   newDiv.textContent = "Merci d'avoir envoyé vos informations d'enregistrement";
