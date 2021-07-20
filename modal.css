@@ -90,14 +90,20 @@
     }
   }
   
-  
-  
    @media screen and (max-width: 540px) {
     .topnav a {display: none;}
     .topnav a.icon {
-      float: right;
+     /*  float: right; */
       display: block;
-      margin-top: -15px;
+      /* margin-top: -15px */;
+    }
+
+    .logo {
+      width: 80%;
+    }
+
+    .header-logo {
+      width: 80%;
     }
   } 
   
